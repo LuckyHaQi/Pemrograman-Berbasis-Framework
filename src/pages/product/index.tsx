@@ -2,9 +2,9 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const ProductsPage = () => {
-    const [isLogin, setIsLogin] = useState(false);
     const { push } = useRouter();
     useEffect(() => {
+        const isLogin = localStorage.getItem("isLogin");
         if (!isLogin) {
             push("/auth/login");
         }
